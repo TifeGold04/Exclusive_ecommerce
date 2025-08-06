@@ -585,16 +585,26 @@
       }   
 
       .check button{
-        width: 1.7rem;
-        padding-left: 2px;
-        height: 1.6rem;
+        width: 2rem;
+        padding-bottom: .5rem; 
+        height: 2rem;
         border-radius: 5px;
         border-color: #333;
-        background: #FAFAFA;
+        background: #E7E7E7;
+        border: none;
+        align-items: center;
+        justify-content: center;
       }
       .check button:hover{
-        background-color: #000000;
+        background-color: var(--primary-color);
         color: white;
         cursor: pointer;
       }
-    
+    .text_muted{
+        color: #e7e7e7e7;
+        border: none;
+        background: transparent;
+    }
+    .text_muted:hover{
+        color: #f00;
+    }
