@@ -581,3 +581,15 @@
         align-items: center;
         gap: 1rem;
       }   
+
+      .check input{
+        width: 1.7rem;
+        padding-left: 2px;
+        height: 1.1rem;
+      }
+      .check input:hover{
+        background-color: #000000;
+        color: white;
+        cursor: pointer;
+      }
+    
