@@ -608,3 +608,27 @@
     .text_muted:hover{
         color: #f00;
     }
+
+    .about-body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+    .error-container {
+      max-width: 500px;
+    }
+    .btn-home {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+    }
+    .btn-home:hover {
+      background-color: #e60000;
+    }
+    .btn-home a{
+        color: white;
+        text-decoration: none;
+    }
