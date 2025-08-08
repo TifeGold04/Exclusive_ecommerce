@@ -1,0 +1,324 @@
+  :root {
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            --box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .hero {
+            padding: 40px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .category-sidebar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: var(--box-shadow);
+            margin-right: 30px;
+            height: fit-content;
+        }
+
+        .category-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-sidebar li {
+            padding: 15px 20px;
+            margin: 8px 0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #555;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-sidebar li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .category-sidebar li:hover::before {
+            left: 100%;
+        }
+
+        .category-sidebar li:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .carousel {
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .carousel-item {
+            height: 500px;
+            position: relative;
+        }
+
+        .carousel-item:nth-child(1) .advert-content {
+            background: var(--gradient-1);
+        }
+
+        .carousel-item:nth-child(2) .advert-content {
+            background: var(--gradient-2);
+        }
+
+        .carousel-item:nth-child(3) .advert-content {
+            background: var(--gradient-3);
+        }
+
+        .carousel-item:nth-child(4) .advert-content {
+            background: var(--gradient-4);
+        }
+
+        .advert-content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .advert-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .advert-text {
+            flex: 1;
+            z-index: 2;
+            position: relative;
+        }
+
+        .advert-text i {
+            color: rgba(255, 255, 255, 0.9);
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .advert-text h4 {
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
+            text-shadow: var(--text-shadow);
+        }
+
+        .advert-text h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 20px 0 30px 0;
+            text-shadow: var(--text-shadow);
+            line-height: 1.1;
+        }
+
+        .shop-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            text-shadow: var(--text-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shop-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .shop-btn:hover::before {
+            left: 100%;
+        }
+
+        .shop-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .advert-image {
+            flex: 1;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .advert-image img {
+            max-width: 100%;
+            max-height: 350px;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.2));
+            transition: all 0.3s ease;
+        }
+
+        .advert-image img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .carousel-indicators {
+            bottom: 30px;
+        }
+
+        .carousel-indicators button {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin: 0 8px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicators button.active {
+            background: white;
+            transform: scale(1.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-control-prev {
+            left: 20px;
+        }
+
+        .carousel-control-next {
+            right: 20px;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 25px;
+            height: 25px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 20px 0;
+            }
+            
+            .category-sidebar {
+                margin-bottom: 30px;
+                margin-right: 0;
+            }
+            
+            .advert-content {
+                flex-direction: column;
+                padding: 40px 30px;
+                text-align: center;
+            }
+            
+            .advert-text h1 {
+                font-size: 2.5rem;
+                margin: 15px 0 25px 0;
+            }
+            
+            .carousel-item {
+                height: 600px;
+            }
+        }
+
+        /* Animation for slide entrance */
+        .carousel-item.active .advert-text h1 {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .carousel-item.active .advert-text h4 {
+            animation: slideInLeft 0.8s ease-out 0.2s both;
+        }
+
+        .carousel-item.active .shop-btn {
+            animation: slideInLeft 0.8s ease-out 0.4s both;
+        }
+
+        .carousel-item.active .advert-image {
+            animation: slideInRight 0.8s ease-out 0.3s both;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
